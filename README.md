@@ -5,13 +5,13 @@ Assembly Line (the game) tools.
 ## Installation
 
 ```shell
-npm install assemblyline.js
+npm install assembly-line.js
 ```
 
 ## Usage
 
 ```js
-const AL = require('assemblyline.js');
+const AL = require('assembly-line.js');
 ```
 
 ### `Recipe` (and `RecipeGen`)
