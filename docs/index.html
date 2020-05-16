@@ -24,17 +24,17 @@
 		Installation
 	</h3>
 
-	<pre class='border border-primary'>
-		npm install assembly-line.js
-	</pre>
+	<pre>
+npm install assembly-line.js
+</pre>
 
 	<h3>
 		Usage
 	</h3>
 
-	<pre class='js-high border border-primary'>
-		const AL = require('assembly-line.js')
-	</pre>
+	<pre class='js-high'>
+const AL = require('assembly-line.js');
+</pre>
 
 	<h3>
 		API
@@ -69,7 +69,189 @@
 		<code>ingredients</code>
 	</h5>
 
-	<a href="https://github.com/rubenverg/assembly-line.js" class="btn btn-primary">GitHub repo, in the meantime <i
+	<p>
+		The getter returns an array of resources, like the ones you might have put in <code>RecipeGen</code>.
+	</p>
+
+	<p>
+		The setter works exactly like <code>RecipeGen</code>.
+	</p>
+
+	<h5>
+		<code>toString(isMultiline)</code>
+	</h5>
+
+	<p>
+		<code>toString</code> by default returns a multiline string with a pink-colored <code>Recipe</code> followed by
+		opening brace, newline, list of materials on separate lines and closing brace on a new line.
+	</p>
+
+	<p>
+		Setting <code>isMultiline</code> to false returns a single-line version of the same string, with
+		<code>(parentheses)</code> instead of <code>{braces}</code>.
+	</p>
+
+	<h5>
+		<code>equal(other)</code>
+	</h5>
+
+	<p>
+		Checks whether two recipes share the same ingredients, in the same amount and in the same order.
+	</p>
+
+	<h4>
+		<code>Resource</code>
+	</h4>
+
+	All members and methods of <code>Resource</code>s are static.
+
+	<h5>
+		<code>isRoot</code>
+	</h5>
+
+	<p>
+		Whether the resource is a 'root' resource (Aluminum, Copper, Diamond, Gold, Iron and None).
+	</p>
+
+	<h5>
+		<code>sellCost</code>
+	</h5>
+
+	<p>
+		Value when sold.
+	</p>
+
+	<h5>
+		<code>repeat(n)</code>
+	</h5>
+
+	<p>
+		Repeats the resource <code>n</code> times, and returns an array.
+	</p>
+
+	<pre class="js-high">
+AL.Circuit.repeat(3)
+          .map(i => {return i.toString()})
+          .forEach(i => {console.log(i)})
+/* →
+Circuit(300$)
+Circuit(300$)
+Circuit(300$)
+*/
+</pre>
+
+	<h5>
+		<code>toString(level = 1)</code>
+	</h5>
+
+	<p>
+		Returns a string representation of the resource.
+	</p>
+
+	<p>
+		<code>level</code> is used to define the amount of color and formatting in the string.
+	</p>
+
+	<p>
+		Suggested:
+	<ul>
+		<li>
+			<code>0</code> for when you are using a string inside of another function which returns a string (one line, all
+			default color)
+		</li>
+		<li>
+			<code>1</code> for when you are using a string for logging basi information (one line, colored)
+		</li>
+		<li>
+			<code>2</code> for when you want formatted and extensive logging, like for debugging purposes (multiline, colored)
+		</li>
+	</ul>
+	</p>
+
+	<h5>
+		Resources in the library
+	</h5>
+
+	<p>
+		By default, the library contains all the resources in Assembly Line, including <code>None</code>. They are named
+		with this convention:
+	<ul>
+		<li>
+			<code>get the item's name</code>
+		</li>
+		<li>
+			<code>Make It Title Case</code>
+		</li>
+		<li>
+			<code>RemoveSpaces</code>
+		</li>
+	</ul>
+	</p>
+
+	<p class='text-muted small'>
+		To reformat into the original name, you can use <code>String.prototype.unCamel()</code>, which does the same thing
+		in reverse and turns <code>A I</code> into <code>AI</code>
+	</p>
+
+	<h4>
+		Calculations
+	</h4>
+
+	<h5>
+		<code>howMany(toCalc, res)</code>
+	</h5>
+
+	<p>
+		Given two resources <code>toCalc</code> and <code>res</code>, calculate how many <code>res</code>es there are in
+		<code>toCalc</code>.
+	</p>
+
+	<pre class="js-high">
+AL.howMany(AL.AIRobot, AL.Circuit);
+// → 1030
+</pre>
+
+	<h5>
+		<code>howManyMultiple(toCalc, res)</code>
+	</h5>
+
+	<p>
+		Given a resource <code>toCalc</code> and an array of resources <code>res</code>, calculate how many of each of
+		<code>res</code>' items there are in <code>toCalc</code>.
+	</p>
+
+	<pre class="js-high">
+AL.howManyMultiple(AL.AIRobot, [AL.Circuit, AL.Engine]);
+// → { Circuit: 1030, Engine: 560 }
+</pre>
+
+	<h5>
+		<code>howManyRoots(toCalc)</code>
+	</h5>
+
+	<p>
+		Given a resource <code>toCalc</code>, calculate how many of each of the root items (excluding <code>None</code>)
+		there are in <code>toCalc</code>.
+	</p>
+
+	<p class="text-muted small">
+		This is a wrapper around <code>howManyMultiple</code>
+	</p>
+
+	<pre class="js-high">
+AL.howManyRoots(AL.AIRobot);
+// → { Aluminum: 2920, Copper: 2495, Diamond: 0, Gold: 1665, Iron: 1480 }
+</pre>
+
+	<h2>
+		License
+	</h2>
+
+	<p>
+		MIT
+	</p>
+
+	<a href="https://github.com/rubenverg/assembly-line.js" class="btn btn-primary">GitHub repo<i
 			class="bi-chevron-double-right"></i></a>
 
 	<!-- Bootstrap scripts -->

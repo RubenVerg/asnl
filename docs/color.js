@@ -40,18 +40,18 @@ function colorize(x, lang) {
   var phptagcolor = "#282629";
   var phpcolor = "#282629";
   var phpkeywordcolor = "#bf65f0";
-  var phpglobalcolor = "goldenrod";
-  var phpstringcolor = "#9e8d49";
-  var phpnumbercolor = "#ea0027";  
-  var pythoncolor = "#373c3f";
-  var pythonkeywordcolor = "#0079d3";
-  var pythonstringcolor = "#9e8d49";
-  var pythonnumbercolor = "#ea0027";  
-  var angularstatementcolor = "#ea0027";
-  var sqlcolor = "#373c3f";
-  var sqlkeywordcolor = "#0079d3";
-  var sqlstringcolor = "#9e8d49";
-  var sqlnumbercolor = "";  
+  var phpglobalcolor = "#eeba21";
+  var phpstringcolor = "#97bd2d";
+  var phpnumbercolor = "#ee4eb8";  
+  var pythoncolor = "#282629";
+  var pythonkeywordcolor = "#bf65f0";
+  var pythonstringcolor = "#97bd2d";
+  var pythonnumbercolor = "#ee4eb8";  
+  var angularstatementcolor = "#1fc598";
+  var sqlcolor = "#282629";
+  var sqlkeywordcolor = "#bf65f0";
+  var sqlstringcolor = "#97bd2d";
+  var sqlnumbercolor = "#ee4eb8";  
   if (!lang) {lang = "html"; }
   if (lang == "html") {return htmlMode(x);}
   if (lang == "css") {return cssMode(x);}
