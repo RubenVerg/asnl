@@ -18,20 +18,65 @@
 		<i class="bi-clock-history-xl"></i>
 	</div>
 
-	<p class="lead">
-		Hey! We're so glad to find someone interested in <code>AssemblyLine.js</code>!
+	<h2>Docs <span class="h3 text-muted">Will be moved in separate pages!</span></h2>
+
+	<h3>
+		Installation
+	</h3>
+
+	<pre class='border border-primary'>
+		npm install assembly-line.js
+	</pre>
+
+	<h3>
+		Usage
+	</h3>
+
+	<pre class='js-high border border-primary'>
+		const AL = require('assembly-line.js')
+	</pre>
+
+	<h3>
+		API
+	</h3>
+
+	<h4>
+		<code>Recipe</code> and <code>RecipeGen</code>
+	</h4>
+
+	<h5>
+		<code>RecipeGen(arr) / Creating a recipe</code>
+	</h5>
+
+	<p>
+		<code>RecipeGen</code> returns a recipe, generated based on the resources you pass.
 	</p>
 
 	<p>
-		Sadly, as of now, the documentation isn't ready. Wanna check later?
+		The array <code>arr</code> should be an array of resource prototypes (that is, like <code>AL.Aluminum</code> and not
+		<code>new AL.Aluminum()</code>)
 	</p>
 
-	<a href="https://github.com/rubenverg/assembly-line.js" class="btn btn-primary">GitHub repo, in the meantime <i class="bi-chevron-double-right"></i></a>
+	<p>
+		If you need more than one of the same item, repeat it in the array. (See: <code>Resource.repeat()</code>)
+	</p>
+
+	<p>
+		<strong>Don't provide <code>None</code>, it will be automatically filled.</strong>
+	</p>
+
+	<h5>
+		<code>ingredients</code>
+	</h5>
+
+	<a href="https://github.com/rubenverg/assembly-line.js" class="btn btn-primary">GitHub repo, in the meantime <i
+			class="bi-chevron-double-right"></i></a>
 
 	<!-- Bootstrap scripts -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="color.js"></script>
 </body>
 
 </html>
